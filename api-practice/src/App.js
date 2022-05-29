@@ -1,13 +1,13 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import MainPage from './mainPage';
 
 function App() {
   return (
     <div>
-        <Routes>
-          <Route path="/" element={<MainPage/>}/>
-        </Routes>
+      <Routes>
+        <Route path="/" element={<MainPage/>}/>
+      </Routes>
     </div>
   );
 }
