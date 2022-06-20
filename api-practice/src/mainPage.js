@@ -15,6 +15,7 @@ export function getRepos(username) {
 
 export default function MainPage(){
   const [user, setUser] = useState([]);
+  const [repos, setRepos] = useState([]);
   const [disabled, setDisabled] = useState(true);
 
   function handleSubmit(e) {
@@ -23,6 +24,11 @@ export default function MainPage(){
     getUser(e.target.username.value).then((events) => {
       if (mounted) {
         setUser(events);
+      }
+    });
+    getRepos(e.target.username.value).then((events) => {
+      if (mounted) {
+        setRepos(events);
       }
     });
     return () => (mounted = false);
@@ -34,7 +40,7 @@ export default function MainPage(){
   
   return(
     <div>
-      <div class ='search-box'>
+      <div className ='search-box'>
         <form onSubmit={handleSubmit}>
           <label>
             <p>Username:</p>
@@ -44,7 +50,7 @@ export default function MainPage(){
         </form>
       </div>
 
-      <div class ='button-box'>
+      <div className ='button-box'>
         <a href={user.html_url} target="_blank" rel="noreferrer">
           <button disabled={user.message === 'Not Found' || user.length === 0}>Go over to their github profile</button>
         </a>
@@ -52,55 +58,77 @@ export default function MainPage(){
       
       <h2 style={{ color: 'red' }}>{user.message}</h2>
 
-      <div class="grid-container">
-        <div class="grid-item">
+      <div className="grid-container">
+        <div className="grid-item">
           <h2>Username:</h2>
           <p>{user.login}</p>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
           <h2>Name:</h2>
           <p>{user.name}</p>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
           <h2>Email:</h2>
           <p>{user.email}</p>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
           <h2>Location:</h2>
           <p>{user.location}</p>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
           <h2>Hireable:</h2>
           <p>{user.hireable}</p>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
           <h2>Bio:</h2>
           <p>{user.bio}</p>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
           <h2>Public Repos:</h2>
           <p>{user.public_repos}</p>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
           <h2>Following:</h2>
           <p>{user.following}</p>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
           <h2>Created their account:</h2>
           <p>{user.created_at}</p>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
           <h2>Public Gists:</h2>
           <p>{user.public_gists}</p>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
           <h2>Followers:</h2>
           <p>{user.followers}</p>
         </div>
-        <div class="grid-item">
+        <div className="grid-item">
           <h2>Updated their account:</h2>
           <p>{user.updated_at}</p>
         </div>
+      </div>
+      <div className="grid-container-repo">
+        {repos.map((repo) => (
+          <div className="grid-item-repo">
+            <p>{repo.name}</p>
+            <p>Description: {repo.description}</p>
+            <p>Language: {repo.language}</p>
+            <p>Open Issues: {repo.open_issues_count}</p>
+            <p>Topics:</p>
+            {repo.topics.map((topic) => (
+              <div className='tag'><p>{topic}</p></div>
+            ))}
+            <div>
+            <a href={repo.html_url} target="_blank" rel="noreferrer">
+              <button>Code</button>
+            </a>
+            <a href={repo.homepage} target="_blank" rel="noreferrer">
+              <button>Homepage</button>
+            </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
