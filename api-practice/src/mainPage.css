@@ -41,6 +41,10 @@ input[type=submit] {
   cursor: pointer;
 }
 
+input:disabled {
+  background: rgb(123,143,124);
+}
+
 button {
   border-radius: 12px;
   background-color: rgb(56, 125, 175);
@@ -55,8 +59,19 @@ button:hover{
   background: rgb(18, 91, 143);
 }
 
+button:disabled {
+  background: rgb(99,113,123);
+}
+
+button:disabled:hover {
+  background: rgb(99,113,123);
+}
+
 input[type=submit]:hover{
   background: rgb(45, 145, 20);
+}
+input:disabled:hover {
+  background: rgb(123,143,124);
 }
 
 .grid-container {

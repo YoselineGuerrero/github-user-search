@@ -7,8 +7,15 @@ export function getUser(username) {
   );
 }
 
+export function getRepos(username) {
+  return fetch("https://api.github.com/users/"+username+'/repos').then((data) =>
+    data.json()
+  );
+}
+
 export default function MainPage(){
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState([]);
+  const [disabled, setDisabled] = useState(true);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -21,21 +28,25 @@ export default function MainPage(){
     return () => (mounted = false);
   }
 
+  function handleChange(event) {
+    setDisabled(event.target.value === '');
+  }
+  
   return(
     <div>
       <div class ='search-box'>
         <form onSubmit={handleSubmit}>
           <label>
             <p>Username:</p>
-            <input type="text" name="username" />
+            <input type="text" name="username" onChange={handleChange}/>
           </label>
-          <input type="submit" value="Search user" />
+          <input type="submit" value="Search user" disabled={disabled}/>
         </form>
       </div>
 
       <div class ='button-box'>
         <a href={user.html_url} target="_blank" rel="noreferrer">
-          <button >Go over to their github profile</button>
+          <button disabled={user.message === 'Not Found' || user.length === 0}>Go over to their github profile</button>
         </a>
       </div>
       
