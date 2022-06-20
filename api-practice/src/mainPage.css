@@ -33,14 +33,22 @@ p{
 
 h2{
   margin: auto;
-  display: flex;
-  justify-content: center;
+}
+
+input[type=text], select {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none !important;
+  box-shadow: 0 0 1px #719ECE;
+  background-color: #719ece1c;
 }
 
 input[type=submit] {
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
+  padding: 10px 15px;
   margin-top: 10px;
   border: none;
   border-radius:12px;
@@ -51,17 +59,34 @@ input:disabled {
   background: rgb(123,143,124);
 }
 
-button {
+.button-profile {
+  margin: auto;
+  display: flex;
+  justify-content: center;
   border-radius: 12px;
   background-color: rgb(56, 125, 175);
   color: white;
-  margin: 10px;
   padding: 10px;
+  border: none;
+  cursor: pointer;
+  
+}
+
+a {
+  text-decoration: none;
+}
+
+.button-repo {
+  border-radius: 5px;
+  background-color: rgb(195, 211, 223);
+  color: gray;
+  margin: 3px;
+  padding: 5px;
   border: none;
   cursor: pointer;
 }
 
-button:hover{
+.button-profile:hover{
   background: rgb(18, 91, 143);
 }
 

@@ -37,7 +37,7 @@ export default function MainPage(){
   function handleChange(event) {
     setDisabled(event.target.value === '');
   }
-  
+
   return(
     <div>
       <div className ='search-box'>
@@ -50,10 +50,10 @@ export default function MainPage(){
         </form>
       </div>
 
-      <div className ='button-box'>
-        <a href={user.html_url} target="_blank" rel="noreferrer">
-          <button disabled={user.message === 'Not Found' || user.length === 0}>Go over to their github profile</button>
-        </a>
+      <div className='button-box'>
+      <a href={user.html_url} target="_blank" rel="noreferrer">
+        <button className='button-profile' disabled={user.message === 'Not Found' || user.length === 0}>Go over to their github profile</button>
+      </a>
       </div>
       
       <h2 style={{ color: 'red' }}>{user.message}</h2>
@@ -111,7 +111,7 @@ export default function MainPage(){
       <div className="grid-container-repo">
         {repos.map((repo) => (
           <div className="grid-item-repo">
-            <p style={{fontSize: '1.25em'}}>{repo.name}</p>
+            <p style={{fontSize: '1.25em', marginBottom:'4px'}} >{repo.name}</p>
             <div className='subtitle'>
             <p >Created: {repo.created_at.substring(0, 10)}</p>
             <p >Updated: {repo.updated_at.substring(0, 10)}</p>
@@ -130,10 +130,10 @@ export default function MainPage(){
             ))}
             <div>
             <a href={repo.html_url} target="_blank" rel="noreferrer">
-              <button>Code</button>
+              <button className='button-repo'>Code</button>
             </a>
             <a href={repo.homepage} target="_blank" rel="noreferrer">
-              <button>Homepage</button>
+              <button className='button-repo'>Homepage</button>
             </a>
             </div>
           </div>
