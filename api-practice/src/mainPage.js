@@ -111,10 +111,19 @@ export default function MainPage(){
       <div className="grid-container-repo">
         {repos.map((repo) => (
           <div className="grid-item-repo">
-            <p>{repo.name}</p>
-            <p>Description: {repo.description}</p>
+            <p style={{fontSize: '1.25em'}}>{repo.name}</p>
+            <div className='subtitle'>
+            <p >Created: {repo.created_at.substring(0, 10)}</p>
+            <p >Updated: {repo.updated_at.substring(0, 10)}</p>
+            <p >Pushed: {repo.pushed_at.substring(0, 10)}</p>
+            </div>
+            <div className='subtitle'>
+            <p>Stars: {repo.stargazers_count}</p>
+            <p>Watchers: {repo.watchers_count}</p>
+            <p>Issues Open: {repo.open_issues}</p>
+            </div>
             <p>Language: {repo.language}</p>
-            <p>Open Issues: {repo.open_issues_count}</p>
+            <p>Description: {repo.description}</p>
             <p>Topics:</p>
             {repo.topics.map((topic) => (
               <div className='tag'><p>{topic}</p></div>
