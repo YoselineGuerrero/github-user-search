@@ -17,7 +17,7 @@ export default function Repos(user){
       <div className="grid-container-repo">
         {repos.map((repo) => (
           <div className="grid-item-repo">
-            <p style={{fontSize: '1.25em', marginBottom:'4px'}} >{repo.name}</p>
+            <p style={{fontSize: '1.25em', marginBottom:'4px', color:'#0969DA'}} >{repo.name}</p>
             <div className='subtitle'>
               <p >Created: {repo.created_at.substring(0, 10)}</p>
               <p >Updated: {repo.updated_at.substring(0, 10)}</p>

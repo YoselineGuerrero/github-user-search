@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { getUser} from './Components/ApiCalls';
 import Gists from './Components/Gists';
 import Repos from './Components/Repos';
+import GitHubLogo from './GitHub-logo-green.png';
 
 export default function MainPage(){
   const [user, setUser] = useState([]);
@@ -25,13 +26,22 @@ export default function MainPage(){
 
   return(
     <div>
+      <div id='navbar'>
+        <img src={GitHubLogo} width="35px"  alt=''></img>
+        <p id='navbar-title'> GitHub Search User</p>
+        <label className="switch">
+          <input type="checkbox"></input>
+          <span className="slider round"></span>
+        </label>
+      </div>
+
       <div className ='search-box'>
         <form onSubmit={handleSubmit}>
           <label>
             <p>Username:</p>
             <input type="text" name="username" onChange={handleChange}/>
           </label>
-          <input type="submit" value="Search user" disabled={disabled}/>
+          <input type="submit" value="Search User" disabled={disabled}/>
         </form>
       </div>
 

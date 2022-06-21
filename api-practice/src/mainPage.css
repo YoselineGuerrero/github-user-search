@@ -19,40 +19,120 @@ input{
   justify-content: center;
 }
 
+#navbar {
+  overflow: hidden;
+  background-color: #24292f;
+  padding: 10px 25px;
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+}
+
+#navbar-title{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-weight: 600;
+  color: white;
+  margin-left: 15px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 20px;
+  margin-top: 7px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #0969DA;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 p{
   margin: auto;
   display: flex;
   justify-content: center;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-weight: 600;
 }
 
 .subtitle{
- color: gray;
- font-size: 0.875em;
+ color: #57606a;
+ font-size: 12px;
  display : flex;
 }
 
 h2{
   margin: auto;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
 }
 
 input[type=text], select {
-  padding: 10px;
+  padding: 5px 12px;
   margin: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none !important;
-  box-shadow: 0 0 1px #719ECE;
-  background-color: #719ece1c;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: rgba(208, 215, 222, 0.2) 1px;
+  color: #24292f;
+  background-color: white;
+}
+input[type=text]:focus {
+  border: 2px solid #0969da ;
 }
 
 input[type=submit] {
-  background-color: #4CAF50;
+  background-color: #2da44e;
   color: white;
   padding: 10px 15px;
   margin-top: 10px;
   border: none;
   border-radius:12px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 input:disabled {
@@ -99,7 +179,7 @@ button:disabled:hover {
 }
 
 input[type=submit]:hover{
-  background: rgb(45, 145, 20);
+  background: #2c974b;
 }
 input:disabled:hover {
   background: rgb(123,143,124);
@@ -126,22 +206,23 @@ input:disabled:hover {
 
 .grid-item-repo {
   background-color: rgba(255, 255, 255, 0.8);
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #dfdfdf;
+  margin: 8px 8px 16px;
+  padding: 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
 }
 
 .tag{
   display: flex;
-  border-radius: 12px;
-  padding-left: 8px;
-  padding-right: 8px;
-  padding-top: 2px;
-  padding-bottom: 4px;
+  border-radius: 2em;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: -1px;
+  padding-bottom: 2px;
   margin: 3px;
   display: inline-block;
-  background-color: rgb(177,216,255, .5);
-  color: rgb(59,157,255);
+  background-color: #DDF4FF;
+  color: #0969DA;
 }
 
 @media only screen and (max-width: 600px) {
