@@ -28,7 +28,7 @@ export default function MainPage(){
     <div>
       <div id='navbar'>
         <img src={GitHubLogo} width="35px"  alt=''></img>
-        <p id='navbar-title'> GitHub Search User</p>
+        <p id='navbar-title'> GitHub User Search</p>
         <label className="switch">
           <input type="checkbox"></input>
           <span className="slider round"></span>
@@ -38,8 +38,7 @@ export default function MainPage(){
       <div className ='search-box'>
         <form onSubmit={handleSubmit}>
           <label>
-            <p>Username:</p>
-            <input type="text" name="username" onChange={handleChange}/>
+            <input type="text" name="username" onChange={handleChange} placeholder="Enter Username..."/>
           </label>
           <input type="submit" value="Search User" disabled={disabled}/>
         </form>
@@ -103,7 +102,9 @@ export default function MainPage(){
           <p>{user.updated_at}</p>
         </div>
       </div>
+      <hr/>
       <Repos username={user.login}/>
+      <hr/>
       <Gists username={user.login}/>
     </div>
   );
