@@ -24,11 +24,16 @@ export default function MainPage(){
     getUser(e.target.username.value).then((events) => {
       if (mounted) {
         setUser(events);
-      }
-    });
-    getRepos(e.target.username.value).then((events) => {
-      if (mounted) {
-        setRepos(events);
+        if(events.message !== 'Not Found'){
+          getRepos(e.target.username.value).then((events) => {
+            if (mounted) {
+              setRepos(events);
+            }
+          });
+        }
+        else{
+          setRepos([]);
+        }
       }
     });
     return () => (mounted = false);
@@ -56,7 +61,7 @@ export default function MainPage(){
       </a>
       </div>
       
-      <h2 style={{ color: 'red' }}>{user.message}</h2>
+      <h2 style={{ color: 'red', display: 'flex', justifyContent: 'center', margin:'10px' }}>{user.message}</h2>
 
       <div className="grid-container">
         <div className="grid-item">
