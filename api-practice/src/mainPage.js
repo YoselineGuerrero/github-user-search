@@ -13,9 +13,16 @@ export function getRepos(username) {
   );
 }
 
+export function getGists(username) {
+  return fetch("https://api.github.com/users/"+username+'/gists').then((data) =>
+    data.json()
+  );
+}
+
 export default function MainPage(){
   const [user, setUser] = useState([]);
   const [repos, setRepos] = useState([]);
+  const [gists, setGists] = useState([]);
   const [disabled, setDisabled] = useState(true);
 
   function handleSubmit(e) {
@@ -28,6 +35,11 @@ export default function MainPage(){
           getRepos(e.target.username.value).then((events) => {
             if (mounted) {
               setRepos(events);
+            }
+          });
+          getGists(e.target.username.value).then((events) => {
+            if (mounted) {
+              setGists(events);
             }
           });
         }
@@ -113,6 +125,8 @@ export default function MainPage(){
           <p>{user.updated_at}</p>
         </div>
       </div>
+
+      <h2 style={{ display: 'flex', justifyContent: 'center', margin:'10px' }}>Repos</h2>
       <div className="grid-container-repo">
         {repos.map((repo) => (
           <div className="grid-item-repo">
@@ -144,6 +158,27 @@ export default function MainPage(){
           </div>
         ))}
       </div>
+
+      <h2 style={{ display: 'flex', justifyContent: 'center', margin:'10px' }}>Gists</h2>
+
+      <div className="grid-container-repo">
+        {gists.map((gist) => (
+          <div className="grid-item-repo">
+            <div className='subtitle'>
+              <p>Created: {gist.created_at.substring(0, 10)}</p>
+              <p>Updated: {gist.updated_at.substring(0, 10)}</p>
+            </div>
+            <p>Description: {gist.description}</p>
+            <div>
+              <a href={gist.html_url} target="_blank" rel="noreferrer">
+                <button className='button-repo'>Code</button>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+
     </div>
   );
 }
