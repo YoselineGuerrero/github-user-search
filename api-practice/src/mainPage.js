@@ -1,28 +1,11 @@
 import './mainPage.css';
 import React, { useState } from 'react';
-
-export function getUser(username) {
-  return fetch("https://api.github.com/users/"+username).then((data) =>
-    data.json()
-  );
-}
-
-export function getRepos(username) {
-  return fetch("https://api.github.com/users/"+username+'/repos').then((data) =>
-    data.json()
-  );
-}
-
-export function getGists(username) {
-  return fetch("https://api.github.com/users/"+username+'/gists').then((data) =>
-    data.json()
-  );
-}
+import { getUser} from './Components/ApiCalls';
+import Gists from './Components/Gists';
+import Repos from './Components/Repos';
 
 export default function MainPage(){
   const [user, setUser] = useState([]);
-  const [repos, setRepos] = useState([]);
-  const [gists, setGists] = useState([]);
   const [disabled, setDisabled] = useState(true);
 
   function handleSubmit(e) {
@@ -31,21 +14,6 @@ export default function MainPage(){
     getUser(e.target.username.value).then((events) => {
       if (mounted) {
         setUser(events);
-        if(events.message !== 'Not Found'){
-          getRepos(e.target.username.value).then((events) => {
-            if (mounted) {
-              setRepos(events);
-            }
-          });
-          getGists(e.target.username.value).then((events) => {
-            if (mounted) {
-              setGists(events);
-            }
-          });
-        }
-        else{
-          setRepos([]);
-        }
       }
     });
     return () => (mounted = false);
@@ -125,60 +93,8 @@ export default function MainPage(){
           <p>{user.updated_at}</p>
         </div>
       </div>
-
-      <h2 style={{ display: 'flex', justifyContent: 'center', margin:'10px' }}>Repos</h2>
-      <div className="grid-container-repo">
-        {repos.map((repo) => (
-          <div className="grid-item-repo">
-            <p style={{fontSize: '1.25em', marginBottom:'4px'}} >{repo.name}</p>
-            <div className='subtitle'>
-            <p >Created: {repo.created_at.substring(0, 10)}</p>
-            <p >Updated: {repo.updated_at.substring(0, 10)}</p>
-            <p >Pushed: {repo.pushed_at.substring(0, 10)}</p>
-            </div>
-            <div className='subtitle'>
-            <p>Stars: {repo.stargazers_count}</p>
-            <p>Watchers: {repo.watchers_count}</p>
-            <p>Issues Open: {repo.open_issues}</p>
-            </div>
-            <p>Language: {repo.language}</p>
-            <p>Description: {repo.description}</p>
-            <p>Topics:</p>
-            {repo.topics.map((topic) => (
-              <div className='tag'><p>{topic}</p></div>
-            ))}
-            <div>
-            <a href={repo.html_url} target="_blank" rel="noreferrer">
-              <button className='button-repo'>Code</button>
-            </a>
-            <a href={repo.homepage} target="_blank" rel="noreferrer">
-              <button className='button-repo'>Homepage</button>
-            </a>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <h2 style={{ display: 'flex', justifyContent: 'center', margin:'10px' }}>Gists</h2>
-
-      <div className="grid-container-repo">
-        {gists.map((gist) => (
-          <div className="grid-item-repo">
-            <div className='subtitle'>
-              <p>Created: {gist.created_at.substring(0, 10)}</p>
-              <p>Updated: {gist.updated_at.substring(0, 10)}</p>
-            </div>
-            <p>Description: {gist.description}</p>
-            <div>
-              <a href={gist.html_url} target="_blank" rel="noreferrer">
-                <button className='button-repo'>Code</button>
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-
-
+      <Repos username={user.login}/>
+      <Gists username={user.login}/>
     </div>
   );
 }
