@@ -16,7 +16,7 @@ export default function Gists(user){
       <h2 style={{ display: 'flex', justifyContent: 'center', margin:'10px' }}>Gists</h2>
       <div className="grid-container-repo">
         {gists.map((gist) => (
-          <div className="grid-item-repo">
+          <div className="grid-item-repo" key={gist.description}>
             <div className='subtitle'>
               <p>Created: {gist.created_at.substring(0, 10)}</p>
               <p>Updated: {gist.updated_at.substring(0, 10)}</p>

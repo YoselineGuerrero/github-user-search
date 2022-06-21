@@ -22,7 +22,7 @@ input{
 #navbar {
   overflow: hidden;
   background-color: #24292f;
-  padding: 10px 25px;
+  padding: 12px 25px;
   display: flex;
   flex-direction: row;
   position: sticky;
@@ -101,12 +101,15 @@ p{
 
 .subtitle{
  color: #57606a;
- font-size: 12px;
+ font-size: 14px;
  display : flex;
 }
 
 h2{
   margin: auto;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 600;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
 }
 

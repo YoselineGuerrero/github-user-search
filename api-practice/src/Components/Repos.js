@@ -16,7 +16,7 @@ export default function Repos(user){
       <h2 style={{ display: 'flex', justifyContent: 'center', margin:'10px' }}>Repos</h2>
       <div className="grid-container-repo">
         {repos.map((repo) => (
-          <div className="grid-item-repo">
+          <div className="grid-item-repo" key={repo.name}>
             <p style={{fontSize: '1.25em', marginBottom:'4px', color:'#0969DA'}} >{repo.name}</p>
             <div className='subtitle'>
               <p >Created: {repo.created_at.substring(0, 10)}</p>
@@ -32,7 +32,7 @@ export default function Repos(user){
             <p>Description: {repo.description}</p>
             <p>Topics:</p>
             {repo.topics.map((topic) => (
-              <div className='tag'><p>{topic}</p></div>
+              <div className='tag' key={topic}><p>{topic}</p></div>
             ))}
             <div>
               <a href={repo.html_url} target="_blank" rel="noreferrer">
