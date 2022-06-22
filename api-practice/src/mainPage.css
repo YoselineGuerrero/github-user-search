@@ -1,5 +1,5 @@
 .search-box { 
-  padding: 50px;
+  padding: 40px;
   margin: auto;
   display: flex;
   justify-content: space-evenly;
@@ -163,7 +163,6 @@ button {
   cursor: pointer;
   border-radius: 6px;
   padding: 7px 16px;
-  border: none;
 }
 
 .button-box {
@@ -175,13 +174,19 @@ button {
 .button-profile {
   background-color: rgb(56, 125, 175);
   color: white;
+  border: none;
 }
 
 .button-repo {
-  background-color: rgb(195, 211, 223);
-  color: gray;
+  background-color: #f6f8fa;
+  color: #24292f;
+  border:1px solid  #1b1f2426;
   margin: 3px;
-  padding: 5px;
+  padding: 5px 16px;
+}
+
+.button-repo:hover{
+  background: #d0d7de;
 }
 
 .button-profile:hover{
