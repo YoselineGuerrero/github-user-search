@@ -13,7 +13,7 @@ export default function Gists(user){
 
   return(
     <div>
-      <h2 style={{ display: 'flex', justifyContent: 'center', margin:'10px' }}>Gists</h2>
+      <h2>Gists</h2>
       <div className="grid-container-repo">
         {gists.map((gist) => (
           <div className="grid-item-repo" key={gist.description}>
