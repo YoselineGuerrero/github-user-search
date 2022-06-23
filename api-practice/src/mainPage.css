@@ -217,6 +217,19 @@ button {
   padding: 5px 16px;
 }
 
+.button-repo:disabled {
+  background-color: #f6f8fa;
+  color: #8c959f;
+  border:1px solid  #1b1f2426;
+  margin: 3px;
+  padding: 5px 16px;
+  cursor: default;
+}
+
+.button-repo:disabled:hover {
+  background-color: #f6f8fa;
+}
+
 #repo-button-box {
   justify-content: flex-start;
   display: flex;

@@ -44,7 +44,7 @@ export default function Repos(user){
                 <button className='button-repo'>Code</button>
               </a>
               <a href={repo.homepage} target="_blank" rel="noreferrer">
-                <button className='button-repo'>Homepage</button>
+                <button className='button-repo' disabled={repo.homepage === '' || repo.homepage === null}>Homepage</button>
               </a>
             </div>
           </div>
