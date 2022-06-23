@@ -106,6 +106,11 @@ export default function MainPage(){
       <Repos username={user.login}/>
       <hr/>
       <Gists username={user.login}/>
+
+      <div id='footer'>
+        <img src={GitHubLogo} width="35px"  alt=''></img>
+        <p id='footer-title'>© 2022 Yoseline Guerrero</p>
+      </div>
     </div>
   );
 }

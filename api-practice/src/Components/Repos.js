@@ -30,7 +30,7 @@ export default function Repos(user){
             </div>
             <p>Language: {repo.language}</p>
             <p>Description: {repo.description}</p>
-            <div style={{display: 'flex', justifyContent: 'center',}}>
+            <div id="repo-tag">
             {repo.topics.map((topic) => (
               <span className='tag' key={topic}><p>{topic}</p></span>
             ))}
