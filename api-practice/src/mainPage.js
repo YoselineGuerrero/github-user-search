@@ -33,6 +33,7 @@ export default function MainPage(){
         setUser(events);
       }
     });
+    document.title = e.target.username.value; 
     return () => (mounted = false);
   }
 
@@ -43,7 +44,9 @@ export default function MainPage(){
   return(
     <div>
       <div id='navbar'>
-        <img src={GitHubLogo} width="35px"  alt=''></img>
+        <a href='/'>
+          <img src={GitHubLogo} width="35px"  alt='Green GitHub Logo'></img>
+        </a>
         <p id='navbar-title'> GitHub User Search</p>
         <label className="switch">
           <input type="checkbox"></input>
