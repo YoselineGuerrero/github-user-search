@@ -9,10 +9,9 @@
 
 #footer {
   overflow: hidden;
-  padding: 12px 25px;
+  padding: 40px 16px 48px;
   display: flex;
-  flex-direction: row;
-  position: sticky;
+  align-items: center ;
 }
 
 #footer-title{
@@ -20,6 +19,23 @@
   color: #57606a;
   margin-left: 15px;
   font-size: 12px;
+}
+
+#footer-a{
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+  flex: auto;
+  padding-inline-start: 40px
+}
+
+#footer-links{
+  Text-Decoration: None !important;
+  color: #0969da;
+}
+
+#footer-links:hover{
+  Text-Decoration: underline !important;
 }
 
 #navbar {

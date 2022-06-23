@@ -5,6 +5,22 @@ import Gists from './Components/Gists';
 import Repos from './Components/Repos';
 import GitHubLogo from './GitHub-logo-green.png';
 
+const footer_links = [
+  {
+    name:'Portfolio',
+    link: 'https://yoselineguerrero.github.io/dev-portfolio/'
+  }, {
+    name:'Code for this Site',
+    link: 'https://github.com/YoselineGuerrero/react-api-pratice'
+  }, {
+    name:'GitHub Profile',
+    link: 'https://github.com/YoselineGuerrero'
+  }, {
+    name:'LinkedIn',
+    link: 'https://www.linkedin.com/in/yoseline-guerrero-a78526175/'
+  },
+]
+
 export default function MainPage(){
   const [user, setUser] = useState([]);
   const [disabled, setDisabled] = useState(true);
@@ -107,9 +123,15 @@ export default function MainPage(){
       <hr/>
       <Gists username={user.login}/>
 
+      <hr style={{marginTop:'40px', width:'90%'}}/>
       <div id='footer'>
         <img src={GitHubLogo} width="35px"  alt=''></img>
         <p id='footer-title'>© 2022 Yoseline Guerrero</p>
+        <div id='footer-a'>
+        {footer_links.map((link) => (
+          <a id='footer-links' key={link.name} href={link.link} target='_blank' rel="noreferrer">{link.name}</a>
+        ))}
+        </div>
       </div>
     </div>
   );
