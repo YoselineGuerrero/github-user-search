@@ -1,7 +1,7 @@
 import '../mainPage.css';
 import React, { useEffect, useState } from 'react';
 import { getRepos } from './ApiCalls';
-import languages from './github-lang-colors.css';
+import'./github-lang-colors.css';
 
 export default function Repos(user){
   const [repos, setRepos] = useState([]);
@@ -29,15 +29,17 @@ export default function Repos(user){
               <p>Watchers: {repo.watchers_count}</p>
               <p>Issues Open: {repo.open_issues}</p>
             </div>
-            <span className={repo.language} id='dot'></span>
-            <span id='name'>{repo.language}</span>
+            <div className='button-box'>
+              <span className={repo.language} id='dot'></span>
+              <span id='name'>{repo.language}</span>
+            </div>
             <p>Description: {repo.description}</p>
             <div id="repo-tag">
             {repo.topics.map((topic) => (
               <span className='tag' key={topic}><p>{topic}</p></span>
             ))}
             </div>
-            <div>
+            <div id='repo-button-box'>
               <a href={repo.html_url} target="_blank" rel="noreferrer">
                 <button className='button-repo'>Code</button>
               </a>
