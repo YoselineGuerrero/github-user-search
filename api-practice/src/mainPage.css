@@ -174,14 +174,15 @@ input[type=submit] {
 }
 
 input:disabled {
-  background: rgb(123,143,124);
+  background: #94d3a2;
+  cursor: default;
 }
 
 input[type=submit]:hover{
   background: #2c974b;
 }
 input:disabled:hover {
-  background: rgb(123,143,124);
+  background: #94d3a2;
 }
 
 /* BUTTONS */
@@ -245,11 +246,12 @@ button {
 }
 
 button:disabled {
-  background: rgb(99,113,123);
+  background: rgb(150, 174, 190);
+  cursor: default;
 }
 
 button:disabled:hover {
-  background: rgb(99,113,123);
+  background: rgb(150, 174, 190);
 }
 
 .grid-container {
