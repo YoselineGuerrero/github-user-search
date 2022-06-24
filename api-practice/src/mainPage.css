@@ -174,7 +174,6 @@ input[type=submit] {
   background-color: #2da44e;
   color: white;
   padding: 7px 16px;
-  margin-top: 10px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -349,5 +348,10 @@ button:disabled:hover {
     align-items: center ;
     justify-content: center;
     margin-top: 10px;
+  }
+
+  input[type=submit], select {
+    display: flex;
+    margin: auto;
   }
 }
