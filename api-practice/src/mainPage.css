@@ -9,9 +9,19 @@
 
 #footer {
   overflow: hidden;
-  padding: 40px 16px 48px;
+  padding: 40px 20px 48px;
   display: flex;
   align-items: center ;
+}
+
+#footer-img {
+  display: flex;
+  align-items: center ;
+  justify-content: center;
+}
+
+#footer-img-small {
+  display: none;
 }
 
 #footer-title{
@@ -24,7 +34,7 @@
 #footer-a{
   display: flex;
   font-size: 12px;
-  justify-content: space-between;
+  justify-content: space-around;
   flex: auto;
   padding-inline-start: 40px
 }
@@ -322,5 +332,22 @@ button:disabled:hover {
     display: grid;
     justify-content: space-evenly;
     grid-template-columns: 99vw;
+  }
+
+  #footer {
+    display: block;
+    overflow: hidden;
+    padding: 40px 16px 48px;
+    align-items: center ;
+  }
+
+  #footer-img {
+    display: none;
+  }
+  #footer-img-small {
+    display: flex;
+    align-items: center ;
+    justify-content: center;
+    margin-top: 10px;
   }
 }
