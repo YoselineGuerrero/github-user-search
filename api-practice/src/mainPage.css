@@ -149,6 +149,11 @@ hr{
   border-color: rgba(216, 222, 228, 0.356);
 }
 
+.a-link {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
 /* INPUTS */
 
 input{

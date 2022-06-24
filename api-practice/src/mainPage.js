@@ -102,7 +102,6 @@ export default function MainPage(){
       <hr/>
       <Gists username={user.login}/>
 
-      <hr style={{marginTop:'40px', width:'90%'}}/>
       <Footer/>
     </div>
   );
