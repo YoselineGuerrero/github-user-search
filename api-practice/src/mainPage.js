@@ -3,23 +3,8 @@ import React, { useState } from 'react';
 import { getUser} from './Components/ApiCalls';
 import Gists from './Components/Gists';
 import Repos from './Components/Repos';
-import GitHubLogo from './GitHub-logo-green.png';
-
-const footer_links = [
-  {
-    name:'Portfolio',
-    link: 'https://yoselineguerrero.github.io/dev-portfolio/'
-  }, {
-    name:'Code for this Site',
-    link: 'https://github.com/YoselineGuerrero/react-api-pratice'
-  }, {
-    name:'GitHub Profile',
-    link: 'https://github.com/YoselineGuerrero'
-  }, {
-    name:'LinkedIn',
-    link: 'https://www.linkedin.com/in/yoseline-guerrero-a78526175/'
-  },
-]
+import Footer from './Components/Footer';
+import Header from './Components/Header';
 
 export default function MainPage(){
   const [user, setUser] = useState([]);
@@ -43,16 +28,7 @@ export default function MainPage(){
 
   return(
     <div>
-      <div id='navbar'>
-        <a href='/'>
-          <img src={GitHubLogo} width="35px"  alt='Green GitHub Logo'></img>
-        </a>
-        <p id='navbar-title'> GitHub User Search</p>
-        <label className="switch">
-          <input type="checkbox"></input>
-          <span className="slider round"></span>
-        </label>
-      </div>
+      <Header/>
 
       <div className ='search-box'>
         <form onSubmit={handleSubmit}>
@@ -127,21 +103,7 @@ export default function MainPage(){
       <Gists username={user.login}/>
 
       <hr style={{marginTop:'40px', width:'90%'}}/>
-      <div id='footer'>
-      <div id='footer-img'>
-          <img src={GitHubLogo} width="35px"  alt=''></img>
-          <span id='footer-title'>© 2022 Yoseline Guerrero</span>
-        </div>
-        <div id='footer-a'>
-        {footer_links.map((link) => (
-          <a id='footer-links' key={link.name} href={link.link} target='_blank' rel="noreferrer">{link.name}</a>
-        ))}
-        </div>
-        <div id='footer-img-small'>
-          <img src={GitHubLogo} width="35px"  alt=''></img>
-          <span id='footer-title'>© 2022 Yoseline Guerrero</span>
-        </div>
-      </div>
+      <Footer/>
     </div>
   );
 }
