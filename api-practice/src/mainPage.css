@@ -7,6 +7,42 @@
   align-content: space-around;
 }
 
+.user-img {
+  border-radius: 50%;
+  width: 275px;
+  border: 1px solid #d0d7de;
+  display: flex;
+  margin: auto;
+}
+
+#username {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px;
+  color: #57606a;
+  margin-bottom: 16px;
+}
+
+.center-f {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number {
+  font-weight: 600;
+  color: #24292f;
+  margin-right: 4px;
+  margin-left: 4px;
+  font-size: 14px;
+}
+
+.user-info {
+  color: #24292f;
+  font-size: 14px;
+}
+
 #footer {
   overflow: hidden;
   padding: 40px 20px 48px;
@@ -195,6 +231,7 @@ input:disabled {
 input[type=submit]:hover{
   background: #2c974b;
 }
+
 input:disabled:hover {
   background: #94d3a2;
 }

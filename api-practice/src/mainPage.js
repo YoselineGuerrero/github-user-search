@@ -39,67 +39,35 @@ export default function MainPage(){
         </form>
       </div>
 
-      <div className='button-box'>
-      <a href={user.html_url} target="_blank" rel="noreferrer">
-        <button className='button-profile' disabled={user.message === 'Not Found' || user.length === 0}>Go over to their github profile</button>
-      </a>
-      </div>
-      
       <h2 style={{ color: 'red', display: 'flex', justifyContent: 'center', margin:'10px' }}>{user.message}</h2>
 
-      <div className="grid-container">
-        <div className="grid-item">
-          <h2>Username:</h2>
-          <p>{user.login}</p>
-        </div>
-        <div className="grid-item">
-          <h2>Name:</h2>
-          <p>{user.name}</p>
-        </div>
-        <div className="grid-item">
-          <h2>Email:</h2>
-          <p>{user.email}</p>
-        </div>
-        <div className="grid-item">
-          <h2>Location:</h2>
-          <p>{user.location}</p>
-        </div>
-        <div className="grid-item">
-          <h2>Hireable:</h2>
-          <p>{user.hireable}</p>
-        </div>
-        <div className="grid-item">
-          <h2>Bio:</h2>
-          <p>{user.bio}</p>
-        </div>
-        <div className="grid-item">
-          <h2>Public Repos:</h2>
-          <p>{user.public_repos}</p>
-        </div>
-        <div className="grid-item">
-          <h2>Following:</h2>
-          <p>{user.following}</p>
-        </div>
-        <div className="grid-item">
-          <h2>Created their account:</h2>
-          <p>{user.created_at}</p>
-        </div>
-        <div className="grid-item">
-          <h2>Public Gists:</h2>
-          <p>{user.public_gists}</p>
-        </div>
-        <div className="grid-item">
-          <h2>Followers:</h2>
-          <p>{user.followers}</p>
-        </div>
-        <div className="grid-item">
-          <h2>Updated their account:</h2>
-          <p>{user.updated_at}</p>
-        </div>
+      <img className='user-img' src={user.avatar_url} alt='GitHub user profile' style={user.avatar_url ? {} : { display: 'none' }}></img>
+      <h2>{user.name}</h2>
+      <p id='username'>{user.login}</p>
+      <p>{user.bio}</p>
+      <div className='center-f'>
+        <span className='number'>{user.followers}</span>
+        <span className='subtitle' style={user.login ? {} : { display: 'none' }}> follower ·</span>
+        <span className='number'>{user.following}</span>
+        <span className='subtitle' style={user.login ? {} : { display: 'none' }}> following</span>
       </div>
-      <hr/>
+      <p className='user-info'>{user.company}</p>
+      <p className='user-info'>{user.location}</p>
+      <p className='user-info'><a href={user.blog} id='footer-links'  target='_blank' rel="noreferrer">{user.blog}</a></p>
+      <p className='user-info'>{user.twitter_username}</p>
+
+      <p className='user-info'>{user.email}</p>
+      <p className='user-info'>{user.created_at}</p>
+      <p className='user-info'>{user.updated_at}</p>
+      <p className='user-info'>{user.location}</p>
+
+      <div className='button-box'>
+        <a href={user.html_url} target="_blank" rel="noreferrer">
+          <button className='button-profile' disabled={user.message === 'Not Found' || user.length === 0} style={user.html_url ? {} : { display: 'none' }}>Go over to their github profile</button>
+        </a>
+      </div>
+
       <Repos username={user.login}/>
-      <hr/>
       <Gists username={user.login}/>
 
       <Footer/>

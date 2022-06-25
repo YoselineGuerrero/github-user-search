@@ -13,7 +13,8 @@ export default function Repos(user){
   }, [user.username]);
 
   return(
-    <div>
+    <div style={repos.length > 0 ? {} : { display: 'none' }}>
+      <hr/>
       <h2>Repos</h2>
       <div className="grid-container-repo">
         {repos.map((repo) => (
