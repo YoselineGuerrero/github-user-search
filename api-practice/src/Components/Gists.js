@@ -7,7 +7,10 @@ export default function Gists(user){
 
   useEffect(() =>{
     getGists(user.username).then((events) => {
-      setGists(events);
+      if(events.message !== 'Not Found')
+        setGists(events);
+      else
+        setGists([])
     });
   }, [user.username]);
 

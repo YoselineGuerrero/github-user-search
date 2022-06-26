@@ -8,7 +8,10 @@ export default function Repos(user){
   
   useEffect(() =>{
     getRepos(user.username).then((events) => {
+      if(events.message !== 'Not Found')
         setRepos(events);
+      else
+        setRepos([])
     });
   }, [user.username]);
 
@@ -21,9 +24,9 @@ export default function Repos(user){
           <div className="grid-item-repo" key={repo.name}>
             <p id ='repo-title'>{repo.name}</p>
             <div className='subtitle'>
-              <p >Created: {repo.created_at.substring(0, 10)}</p>
-              <p >Updated: {repo.updated_at.substring(0, 10)}</p>
-              <p >Pushed: {repo.pushed_at.substring(0, 10)}</p>
+              <p className='padding10'>Created: {repo.created_at.substring(0, 10)}</p>
+              <p className='padding10'>Updated: {repo.updated_at.substring(0, 10)}</p>
+              <p className='padding10'>Pushed: {repo.pushed_at.substring(0, 10)}</p>
             </div>
             <div className='subtitle'>
               <p>Stars: {repo.stargazers_count}</p>
