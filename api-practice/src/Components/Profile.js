@@ -49,7 +49,7 @@ export default function Profile(username){
         <img src={twitter} width="16" height="16" alt='people icon' style={user.twitter ? {} : { display: 'none' }} className='padding5'></img>
         <span className='user-info'>{user.twitter_username}</span>
       </div>
-      <p className='user-info'>{user.email}</p>
+      <p className='user-info'><a id='footer-links' href={`mailto:`+user.email} target="_blank" rel="noreferrer">{user.email}</a></p>
       <p className='user-info' style={user.login ? {} : { display: 'none' }}>Created: {user.created_at}</p>
       <p className='user-info' style={user.login ? {} : { display: 'none' }}>Updated: {user.updated_at}</p>
 

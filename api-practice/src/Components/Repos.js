@@ -22,7 +22,7 @@ export default function Repos(user){
       <div className="grid-container-repo">
         {repos.map((repo) => (
           <div className="grid-item-repo" key={repo.name}>
-            <p id ='repo-title'>{repo.name}</p>
+            <p id ='repo-title'><a id='footer-links' href={repo.html_url} target="_blank" rel="noreferrer">{repo.name}</a></p>
             <div className='subtitle'>
               <p className='padding10'>Created: {repo.created_at.substring(0, 10)}</p>
               <p className='padding10'>Updated: {repo.updated_at.substring(0, 10)}</p>
