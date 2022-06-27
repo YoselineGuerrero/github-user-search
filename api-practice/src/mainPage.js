@@ -28,7 +28,7 @@ export default function MainPage(){
           <label>
             <input type="text" name="username" onChange={handleChange} placeholder="Enter Username..."/>
           </label>
-          <input type="submit" value="Search User" disabled={disabled}/>
+          <input type="submit" value="Search" disabled={disabled}/>
         </form>
       </div>
       <div id='body-padding'>
