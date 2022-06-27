@@ -10,9 +10,9 @@ export default function MainPage(){
   const [user, setUser] = useState();
   const [disabled, setDisabled] = useState(true);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    setUser(e.target.username.value)
+  function handleSubmit(event) {
+    event.preventDefault();
+    setUser(event.target.username.value)
   }
 
   function handleChange(event) {
@@ -20,7 +20,7 @@ export default function MainPage(){
   }
 
   return(
-    <div>
+    <div id='container'>
       <Header/>
 
       <div className ='search-box'>
@@ -31,11 +31,11 @@ export default function MainPage(){
           <input type="submit" value="Search User" disabled={disabled}/>
         </form>
       </div>
-
-      <Profile username={user}/>
-      <Repos username={user}/>
-      <Gists username={user}/>
-
+      <div id='body-padding'>
+        <Profile username={user}/>
+        <Repos username={user}/>
+        <Gists username={user}/>
+      </div>
       <Footer/>
     </div>
   );

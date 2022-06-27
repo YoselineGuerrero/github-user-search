@@ -1,3 +1,12 @@
+#container {
+  min-height: 100vh;
+  position: relative;
+}
+ 
+#body-padding {
+  padding-bottom:220px;
+}
+
 .search-box { 
   padding: 40px;
   margin: auto;
@@ -52,11 +61,17 @@
   font-size: 14px;
 }
 
-#footer {
+#footer-menu {
   overflow: hidden;
   padding: 40px 20px 48px;
   display: flex;
   align-items: center ;
+}
+
+#footer {
+  position:absolute;
+  bottom:0;
+  width:100%;
 }
 
 #footer-img {
@@ -410,5 +425,9 @@ button:disabled:hover {
   
   #footer-a {
     padding-inline-start: 0px;
+  }
+
+  #body-padding {
+    padding-bottom:250px;
   }
 }
