@@ -1,3 +1,11 @@
+:root {
+  --primary-color: black;
+}
+
+[data-theme="dark"] {
+  --primary-color: grey;
+}
+
 #container {
   min-height: 100vh;
   position: relative;
@@ -110,7 +118,7 @@
 
 #navbar {
   overflow: hidden;
-  background-color: #24292f;
+  background-color: var(--primary-color);
   padding: 12px 25px;
   display: flex;
   flex-direction: row;
