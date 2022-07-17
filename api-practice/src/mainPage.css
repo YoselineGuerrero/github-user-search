@@ -2,15 +2,24 @@
 
 :root {
   --primary-color: black;
+  --sub-color: #57606a;
+  --link-color: #0969da;
+  --text-color: #24292f;
+  --body-color: white;
 }
 
 [data-theme="dark"] {
   --primary-color: grey;
+  --sub-color: #57606a;
+  --link-color: #0969da;
+  --text-color: #24292f;
+  --body-color: black;
 }
 
 #container {
   min-height: 100vh;
   position: relative;
+  background-color: var(--body-color);
 }
  
 #body-padding {
@@ -48,7 +57,7 @@
   font-style: normal;
   font-weight: 300;
   line-height: 24px;
-  color: #57606a;
+  color: var(--sub-color);
   margin-bottom: 16px;
 }
 
@@ -60,14 +69,14 @@
 
 .number {
   font-weight: 600;
-  color: #24292f;
+  color: var(--text-color);
   margin-right: 4px;
   margin-left: 4px;
   font-size: 14px;
 }
 
 .user-info {
-  color: #24292f;
+  color: var(--text-color);
   font-size: 14px;
 }
 
@@ -96,7 +105,7 @@
 
 #footer-title{
   font-family: 'Open Sans', sans-serif;
-  color: #57606a;
+  color: var(--sub-color);
   margin-left: 15px;
   font-size: 12px;
 }
@@ -111,7 +120,7 @@
 
 #footer-links{
   Text-Decoration: None !important;
-  color: #0969da;
+  color: var(--link-color);
 }
 
 #footer-links:hover{
@@ -173,7 +182,7 @@
 }
 
 input:checked + .slider {
-  background-color: #0969DA;
+  background-color: var(--link-color);
 }
 
 input:checked + .slider:before {
@@ -198,7 +207,7 @@ p{
 }
 
 .subtitle{
- color: #57606a;
+ color: var(--sub-color);
  font-size: 14px;
  display : flex;
  line-height: 21px;
@@ -238,12 +247,12 @@ input[type=text], select {
   border-radius: 6px;
   outline: none;
   box-shadow: rgba(208, 215, 222, 0.2) 1px;
-  color: #24292f;
+  color: var(--text-color);
   background-color: white;
 }
 
 input[type=text]:focus {
-  border: 2px solid #0969da ;
+  border: 2px solid var(--link-color);
 }
 
 input[type=submit] {
@@ -299,7 +308,7 @@ button {
 
 .button-repo {
   background-color: #f6f8fa;
-  color: #24292f;
+  color: var(--text-color);
   border:1px solid  #1b1f2426;
   margin: 3px;
   padding: 5px 16px;
@@ -379,7 +388,7 @@ button:disabled:hover {
 
 #repo-title {
   margin-bottom: 4px;
-  color:#0969DA;
+  color: var(--link-color);
   font-size: 20px;
   font-weight: 600;
   line-height: 30px;
@@ -394,7 +403,7 @@ button:disabled:hover {
   padding-bottom: 2px;
   margin: 3px;
   background-color: #DDF4FF;
-  color: #0969DA;
+  color: var(--link-color);
   font-weight: 500;
   font-size: 12px;
 }
