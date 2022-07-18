@@ -480,31 +480,31 @@ button:disabled:hover {
   }
 }
 
-@media only screen and (min-width: 1600px) {
-.user-img {
-  margin: 0;
-  margin-right: 40px;
-}
+@media only screen and (min-width: 1000px) {
+  .user-img {
+    margin: 0;
+    margin-right: 40px;
+  }
 
-.big-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  .big-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.center-f {
-  justify-content: flex-start;
-}
+  .center-f {
+    justify-content: flex-start;
+  }
 
-.user-info {
-  justify-content: flex-start;
-}
+  .user-info {
+    justify-content: flex-start;
+  }
 
-.start-content {
-  justify-content: flex-start;
-}
+  .start-content {
+    justify-content: flex-start;
+  }
 
-.user-button {
-  margin: 1.5em 0;
-}
+  .user-button {
+    margin: 1.5em 0;
+  }
 }
