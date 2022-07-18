@@ -113,7 +113,8 @@
   overflow: hidden;
   padding: 40px 20px 48px;
   display: flex;
-  align-items: center ;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 #footer {
@@ -452,8 +453,6 @@ button:disabled:hover {
 
   #footer {
     display: block;
-    overflow: hidden;
-    padding: 40px 16px 48px;
     align-items: center ;
   }
 
@@ -463,8 +462,7 @@ button:disabled:hover {
   #footer-img-small {
     display: flex;
     align-items: center ;
-    justify-content: center;
-    margin-top: 10px;
+    margin: auto;
   }
 
   input[type=submit], select {
@@ -474,6 +472,7 @@ button:disabled:hover {
   
   #footer-a {
     padding-inline-start: 0px;
+    flex-wrap: wrap;
   }
 
   #body-padding {
