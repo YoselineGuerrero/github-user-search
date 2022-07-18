@@ -23,9 +23,9 @@ export default function Profile(username){
      <h2 style={{ color: 'red', display: 'flex', justifyContent: 'center', margin:'10px' }}>{user.message}</h2>
 
       <img className='user-img' src={user.avatar_url} alt='GitHub user profile' style={user.avatar_url ? {} : { display: 'none' }}></img>
-      <h2>{user.name}</h2>
+      <h2 className='text-color'>{user.name}</h2>
       <p id='username'>{user.login}</p>
-      <p>{user.bio}</p>
+      <p className='text-color'>{user.bio}</p>
       <div className='center-f'>
         <img src={people} width="16" height="16" alt='people icon' style={user.login ? {} : { display: 'none' }}></img>
         <span className='number'>{user.followers}</span>

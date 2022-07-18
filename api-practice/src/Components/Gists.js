@@ -17,7 +17,7 @@ export default function Gists(user){
   return(
     <div style={gists.length > 0 ? {} : { display: 'none' }}>
       <hr/>
-      <h2>Gists</h2>
+      <h2 className='text-color'>Gists</h2>
       <div className="grid-container-repo">
         {gists.map((gist) => (
           <div className="grid-item-repo" key={gist.description}>
@@ -25,7 +25,7 @@ export default function Gists(user){
               <p>Created: {gist.created_at.substring(0, 10)}</p>
               <p>Updated: {gist.updated_at.substring(0, 10)}</p>
             </div>
-            <p>Description: {gist.description}</p>
+            <p className='sub-color'>Description: {gist.description}</p>
             <div>
               <a href={gist.html_url} target="_blank" rel="noreferrer">
                 <button className='button-repo'>Code</button>

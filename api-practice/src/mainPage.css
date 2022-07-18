@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 :root {
-  --primary-color: black;
+  --primary-color: #24292f;
   --sub-color: #57606a;
   --link-color: #0969da;
   --text-color: #24292f;
   --body-color: white;
   --border-color: #d0d7de;
+  --tag-backgroud: #DDF4FF;
+  --tag-color: #58a6ff;
+  --button-background: #f6f8fa;
+  --button-background-hover: #f3f4f6;
+  --button-border-hover: rgba(27,31,36,0.15);
+  --repo-button-disabled-color: #8c959f;
+  --repo-button-border-disabled-color: #1b1f2426;
 }
 
 [data-theme="dark"] {
@@ -16,6 +23,21 @@
   --text-color: #c9d1d9;
   --body-color: #0d1117;
   --border-color: #30363d;
+  --tag-backgroud: rgba(56,139,253,0.15);
+  --tag-color: #58a6ff;
+  --button-background: #21262d;
+  --button-background-hover: #30363d;
+  --button-border-hover: #8b949e;
+  --repo-button-disabled-color: #484f58;
+  --repo-button-border-disabled-color: rgb(49 75 101 / 10%);
+}
+
+.text-color {
+  color: var(--text-color);
+}
+
+.sub-color {
+  color: var(--sub-color);
 }
 
 #container {
@@ -80,6 +102,7 @@
 .user-info {
   color: var(--text-color);
   font-size: 14px;
+  margin-top: .3em;
 }
 
 #footer-menu {
@@ -309,7 +332,7 @@ button {
 }
 
 .button-repo {
-  background-color: #f6f8fa;
+  background-color: var(--button-background);
   color: var(--text-color);
   border:1px solid  #1b1f2426;
   margin: 3px;
@@ -317,16 +340,18 @@ button {
 }
 
 .button-repo:disabled {
-  background-color: #f6f8fa;
-  color: #8c959f;
-  border:1px solid  #1b1f2426;
+  background-color: var(--button-background);
+  color: var(--repo-button-disabled-color);
+  border:1px solid  var(--repo-button-border-disabled-color);
   margin: 3px;
   padding: 5px 16px;
   cursor: default;
 }
 
 .button-repo:disabled:hover {
-  background-color: #f6f8fa;
+  background-color: var(--button-background);
+  color: var(--repo-button-disabled-color);
+  border:1px solid  var(--repo-button-border-disabled-color);
 }
 
 #repo-button-box {
@@ -336,7 +361,8 @@ button {
 }
 
 .button-repo:hover{
-  background: var(--border-color);
+  border-color: var(--button-border-hover);
+  background: var(--button-background-hover);
 }
 
 .button-profile:hover{
@@ -395,17 +421,16 @@ button:disabled:hover {
   line-height: 30px;
 }
 
-.tag{
+.tag {
   display: flex;
   border-radius: 2em;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 1px;
-  padding-bottom: 2px;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-top: 2px;
+  padding-bottom: 4px;
   margin: 3px;
-  background-color: #DDF4FF;
-  color: var(--link-color);
-  font-weight: 500;
+  background-color: var(--tag-backgroud);
+  color: var(--tag-color);
   font-size: 12px;
 }
 

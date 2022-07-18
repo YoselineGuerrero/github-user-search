@@ -18,7 +18,7 @@ export default function Repos(user){
   return(
     <div style={repos.length > 0 ? {} : { display: 'none' }}>
       <hr/>
-      <h2>Repos</h2>
+      <h2 className='text-color'>Repos</h2>
       <div className="grid-container-repo">
         {repos.map((repo) => (
           <div className="grid-item-repo" key={repo.name}>
@@ -37,10 +37,10 @@ export default function Repos(user){
               <span className={repo.language} id='dot'></span>
               <span id='name'>{repo.language}</span>
             </div>
-            <p>Description: {repo.description}</p>
+            <p className='sub-color'>Description: {repo.description}</p>
             <div id="repo-tag">
             {repo.topics.map((topic) => (
-              <span className='tag' key={topic}><p>{topic}</p></span>
+              <span className='tag' key={topic}><b>{topic}</b></span>
             ))}
             </div>
             <div id='repo-button-box'>
