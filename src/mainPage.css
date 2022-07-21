@@ -95,6 +95,12 @@
   align-items: center;
 }
 
+.center-error{
+ display: flex;
+ justify-content: center;
+ Text-Decoration: None !important;
+}
+
 .number {
   font-weight: 600;
   color: var(--text-color);
