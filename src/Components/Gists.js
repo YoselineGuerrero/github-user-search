@@ -16,7 +16,6 @@ export default function Gists(user){
 
   return(
     <div style={gists.length > 0 ? {} : { display: 'none' }}>
-      <hr/>
       <h2 className='text-color'>Gists</h2>
       <div className="grid-container-repo">
         {gists.map((gist) => (

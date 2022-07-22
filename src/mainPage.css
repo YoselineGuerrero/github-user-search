@@ -44,6 +44,10 @@
   color: var(--sub-color);
 }
 
+.fill-color {
+  fill: var(--sub-color);
+}
+
 #container {
   min-height: 100vh;
   position: relative;
@@ -92,13 +96,25 @@
 .center-f {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .center-error{
  display: flex;
  justify-content: center;
  Text-Decoration: None !important;
+}
+
+.center-text {
+  text-align: center;
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.inline-center {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 5px;
 }
 
 .number {

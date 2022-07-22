@@ -31,6 +31,13 @@ export default function MainPage(){
           <input type="submit" value="Search" disabled={disabled}/>
         </form>
       </div>
+
+      <div className='padding10' style={user != null ? { display: 'none' } : {}}>
+        <p className='center-text'>Find out more information about GitHub users and what they have publish publicly.</p>
+        <p className='center-text'>Come back soon to see the new features that will also show the follower/following users and a random user option.</p>
+        <p className='center-text'>If you want to try an example, look up yoselineguerrero.</p>
+      </div>
+
       <div id='body-padding'>
         <Profile username={user}/>
         <Repos username={user}/>
