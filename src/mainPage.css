@@ -173,6 +173,7 @@
 #footer-links{
   Text-Decoration: None !important;
   color: var(--link-color);
+  padding-right: 10px;
 }
 
 #footer-links:hover{
@@ -481,10 +482,12 @@ button:disabled:hover {
   #footer-img {
     display: none;
   }
+
   #footer-img-small {
     display: flex;
     align-items: center ;
     margin: auto;
+    padding-top: 10px;
   }
 
   input[type=submit], select {
