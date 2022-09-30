@@ -1,4 +1,4 @@
-# react-api-pratice
+# Github User Search
 
 Live demo:
 https://github-userinfo-search.netlify.app
